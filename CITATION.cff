@@ -1,0 +1,6 @@
+cff-version: 1.2.0
+message: "Please cite the underlying databases listed in SOURCE_LIST.xlsx and species README files. Project authors and DOI have not been supplied."
+title: "Human and Mouse Small RNA Reference Database"
+type: dataset
+url: "https://github.com/wwdff/SmallRNA-Reference-Database"
+abstract: "Initial documentation and category summary package for locally constructed reference candidates."
