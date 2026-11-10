@@ -1,28 +1,34 @@
-# Initial GitHub documentation package
+# Mouse ncRNA reference expansion
 
-The descriptions below refer to the local candidate. FASTA and full metadata are omitted from this initial upload. The full mouse FASTA has not been publicly released. PENDING source sequences are excluded from this upload. Category counts describe the candidate, not released sequences.
+Local replacement candidate for `wwdff/SmallRNA-Reference-Database/Mouse`.
 
-# Mouse Small RNA Reference Database v1.0
+This reference contains 29,531 distinct full sequences, including all 8,477 sequences and IDs in the current `Mouse/reference.fa`. The expansion adds 21,054 sequences. The FASTA contains 15,514 records below 200 nt and 14,017 records at least 200 nt long.
 
-Package date: 2026-11-05 (packaging date, not a new reference build). Status: LOCAL RELEASE CANDIDATE, NOT UPLOADED.
+The core combines the historical five-source reference with local Ensembl 89, GtRNAdb mm10, miRBase 21, Rfam 12.3 and rRNAdb files. The source configuration follows the [SPORTS1.1 mouse reference layout](https://github.com/junchaoshi/sports1.1). The candidate excludes piRBase and whole-genome contigs.
 
-Reused B_Internal/Mouse_reference; FASTA copied byte-for-byte. 8,477 unique sequences and 12,472 source records retained. Taxonomy ID 10090. No sequence deletion, reannotation, or reference rebuilding. All existing source records retained in source_records_json, enriched with provenance and license fields. UNKNOWN means evidence missing, not unrestricted use.
-
-## Processing
-
-Inherited construction: uppercase DNA alphabet, U to T; exact full-length deduplication; all source records retained. Category counts overlap across multi-category sequences. No new length filter or biological species inference was applied in packaging. Human/mouse common sequences can exist naturally; matching nucleotide strings across species do not imply contamination. Taxid and explicit IDs checked; independent taxonomic revalidation was not performed.
-
-Historical Ensembl filtering excludes missing transcript_biotype and lncRNA, misc_RNA, piRNA, retained_intron, TEC. Mature GtRNAdb and NCBI precursor records keep inherited maturity labels; mature and precursor miRNA status is not inferred from length. miRBase21 addition is inherited from the complete internal package, not newly built.
+Identical full sequences share a FASTA ID. Metadata preserves source aliases and RNA categories. The sources include GRCm38 and GRCm39 annotations, stem-loop precursors, rRNA precursors, long ncRNA transcripts and Rfam coordinate regions. Sequence lengths describe FASTA records. 51 records contain bases beyond A/C/G/T.
 
 ## Sources, citations and conditions
 
-- Ensembl116; version 116 / GRCm39; 5548 source records. Download URL: https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/ncrna/Mus_musculus.GRCm39.ncrna.fa.gz. Status: PENDING. Policy: https://www.ensembl.org/about/articles/ensembl-content-disclaimer. Cite Ensembl, release 116; project-generated data unrestricted, third-party provenance unresolved.
-- GtRNAdb_mm39; version Mmusc39 / mm39; 407 source records. Download URL: https://gtrnadb.ucsc.edu/genomes/eukaryota/Mmusc39/mm39-mature-tRNAs.fa. Status: PENDING. Policy: https://gtrnadb.org/citation.html. Chan & Lowe (2016), GtRNAdb 2.0, NAR 44:D184-D189; database redistribution permission unresolved.
-- NCBI_45S; version NR_046233.2; 1 source records. Download URL: https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?tool=portal&save=file&log$=seqview&db=nuccore&report=fasta&id=577019615&extrafeat=null&conwithfeat=on&hide-cdd=on&ncbi_phid=CE89E1AFAB9B8DF10000000000B800B0. Status: REDISTRIBUTION_ALLOWED_WITH_CONDITIONS. Policy: https://www.ncbi.nlm.nih.gov/home/about/policies/. Cite NCBI RefSeq NR_046233.2; molecular-data distribution policy with third-party rights caveat.
-- local_mmu_mirna_DNA; version UNKNOWN; 1978 source records. Download URL: UNKNOWN. Status: PENDING. Policy: UNKNOWN. Credit original provider after verification; filename does not establish upstream license/version.
-- local_mmu_other_DNA; version UNKNOWN; 3345 source records. Download URL: UNKNOWN. Status: PENDING. Policy: UNKNOWN. Credit original provider after verification; filename does not establish upstream license/version.
-- miRBase 21 mouse; version 21; 1193 source records. Download URL: UNKNOWN. Status: PENDING. Policy: https://www.mirbase.org/. Cite miRBase release21; archived file download URL and applicable redistribution terms not verified.
+- **SPORTS1.1 mouse reference resources.** The expansion uses the local mouse reference files corresponding to the SPORTS1.1 configuration: Ensembl release 89 (GRCm38 ncRNA), GtRNAdb mm10 tRNA, miRBase 21 mouse stem-loop sequences, Rfam 12.3 mouse regions, and the rRNAdb rRNA/Y RNA collection. Source counts and aliases are recorded by underlying database. The redistribution status of these local source files remains `PENDING`. [SPORTS1.1 repository](https://github.com/junchaoshi/sports1.1)
+- **Suggested citation.** Shi J, Ko E-A, Sanders KM, Chen Q, Zhou T. *SPORTS1.0: A Tool for Annotating and Profiling Non-coding RNAs Optimized for rRNA- and tRNA-derived Small RNAs*. Genomics, Proteomics & Bioinformatics (2018). [doi:10.1016/j.gpb.2018.04.004](https://doi.org/10.1016/j.gpb.2018.04.004)
 
-## Rights and limitations
+### Source record counts
 
-This project does not own third-party data copyrights. No blanket CC0 or redistribution authorization is asserted. 8476 sequences have at least one PENDING source record; they are preserved and must not be treated as cleared. An UNKNOWN download URL remains a provenance gap requiring confirmation. GitHub/Zenodo publication requires final approval after unresolved rights are addressed.
+| Source | Records |
+|---|---:|
+| Ensembl116 | 5,548 |
+| Ensembl89_GRCm38 | 19,414 |
+| GtRNAdb_local_mm10 | 906 |
+| GtRNAdb_mm39 | 407 |
+| NCBI_45S | 1 |
+| Rfam12.3_local_mouse | 47,503 |
+| local_mmu_mirna_DNA | 1,978 |
+| local_mmu_other_DNA | 3,345 |
+| miRBase 21 mouse | 1,193 |
+| rRNAdb_local_mouse | 10 |
+
+
+## Publication status
+
+29,531 sequences have at least one source record marked PENDING under the recorded provenance and redistribution audit. Source-specific redistribution review is needed before public release.
